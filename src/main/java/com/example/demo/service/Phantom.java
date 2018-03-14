@@ -35,7 +35,7 @@ public class Phantom {
         //这里的url 换成上一步生成的html文件路径
 //        String url = "http://localhost:8080/revenueAssuranceMetrics/index?email=true";
         //java 调用phantomjs执行脚本，传入需要截图的url。这里的phantomjs可以添加的环境bin下，或者在程序目录
-        Process p = rt.exec("phantomjs chapture.js " + this.url);
+        Process p = rt.exec("bash -c /client/phantomjs /client/chapture.js " + this.url);
 //        InputStream is = p.getInputStream();
 //        BufferedReader br = new BufferedReader(new InputStreamReader(is));
 //        StringBuffer sbf = new StringBuffer();

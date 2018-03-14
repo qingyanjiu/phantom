@@ -3,5 +3,6 @@ COPY . /client
 WORKDIR /client
 RUN mvn package -Dmaven.test.skip=true
 RUN ls target
+RUN chmod +x phantomjs
 EXPOSE 8000
 CMD java -jar target/*.jar
