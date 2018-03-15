@@ -9,14 +9,16 @@ var componentId = args[2];
 
 page.open(url, function() {
     page.clipRect = page.evaluate(function(id){
-        var obj =
-document.getElementById(id).getBoundingClientRect();
+        var obj;
+        if(id)
+          obj = document.getElementById(id).getBoundingClientRect();
+        else
+          obj = document.getElementsByClassName('well')[0].getBoundingClientRect();
         return obj;
     },componentId);
 
   window.setTimeout(function () {
-        page.render('/home/revenueAssuranceMetrics.png',{quality:
-'100'});
+        page.render('/home/revenueAssuranceMetrics.png',{quality:'100'});
         phantom.exit();
     }, 10000);
 });
