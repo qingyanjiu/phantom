@@ -18,7 +18,7 @@ page.open(url, function() {
     },componentId);
 
   window.setTimeout(function () {
-        page.render('/home/revenueAssuranceMetrics.png',{quality:'100'});
+        page.render('snapshot/revenueAssuranceMetrics.png',{quality:'100'});
         phantom.exit();
     }, 10000);
 });
