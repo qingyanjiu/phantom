@@ -19,6 +19,7 @@ page.open(url, function() {
 
   window.setTimeout(function () {
         page.render('snapshot/revenueAssuranceMetrics.png',{quality:'100'});
+        console.log("success");
         phantom.exit();
     }, 10000);
 });

@@ -26,15 +26,15 @@ public class PhatomApplication {
 	@RequestMapping("/capture")
 	@ResponseBody
 	public String capture(String url, String componentId){
-		String ret = "success";
+		String result = "";
 		phantom.setUrl(url);
 		phantom.setComponentId(componentId);
 		try {
-			phantom.executeJs();
+			result = phantom.executeJs();
 		} catch (IOException e) {
-			ret = "failure";
+			result = "failure";
 			e.printStackTrace();
 		}
-		return ret;
+		return result;
 	}
 }
